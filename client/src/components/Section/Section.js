@@ -10,12 +10,10 @@ function Section({ bgImage, updateBG }) {
 
   function handleOver(e) {
     console.log(e.target.dataset.info);
-    setTempCard(false);
-    console.log(tempCard);
+    updateBG(e.target.dataset.info);
   }
   function handleExit() {
-    setTempCard(true);
-    console.log(tempCard);
+    updateBG("Card5");
   }
 
   return (
@@ -31,9 +29,27 @@ function Section({ bgImage, updateBG }) {
         >
           Custom Frame
         </Card1>
-        <Card2 value="Card1">Gift Ideas</Card2>
-        <Card3 value="Card1">Arts, Prints, Photographs</Card3>
-        <Card4 value="Card1">Textiles</Card4>
+        <Card2
+          data-info="Card2"
+          onMouseEnter={handleOver}
+          onMouseLeave={handleExit}
+        >
+          Gift Ideas
+        </Card2>
+        <Card3
+          data-info="Card3"
+          onMouseEnter={handleOver}
+          onMouseLeave={handleExit}
+        >
+          Arts, Prints, Photographs
+        </Card3>
+        <Card4
+          data-info="Card4"
+          onMouseEnter={handleOver}
+          onMouseLeave={handleExit}
+        >
+          Textiles
+        </Card4>
       </CardGroup>
     </Wrap>
   );
@@ -88,7 +104,7 @@ const Card1 = styled.div`
   align-items: center;
   border-radius: 20px;
   opacity: 0.85;
-  margin: 0 10px;
+  // margin: 0 10px;
 `;
 
 const Card2 = styled(Card1)``;
