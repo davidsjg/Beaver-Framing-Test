@@ -1,18 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useContext, useRef } from "react";
 import styled from "styled-components";
+import CardContext from "../../api/CardContext";
 
-function Section({ bgImage }) {
-  const [card1, setCard1] = useState(false);
+function Section({ bgImage, updateBG }) {
+  const { card1, card2, card3, card4 } = useContext(CardContext);
+  const [tempCard, setTempCard] = useState(true);
 
-  console.log(bgImage);
+  let temp1 = useRef(Card1);
 
-  function handleOver() {
-    setCard1(true);
-    console.log(card1);
+  function handleOver(e) {
+    console.log(e.target.dataset.info);
+    setTempCard(false);
+    console.log(tempCard);
   }
   function handleExit() {
-    setCard1(false);
-    console.log(card1);
+    setTempCard(true);
+    console.log(tempCard);
   }
 
   return (
@@ -21,12 +24,16 @@ function Section({ bgImage }) {
         <h1>You can Beaver just about anthing.</h1>
       </ItemText>
       <CardGroup>
-        <Card1 onMouseEnter={handleOver} onMouseLeave={handleExit}>
+        <Card1
+          data-info="Card1"
+          onMouseEnter={handleOver}
+          onMouseLeave={handleExit}
+        >
           Custom Frame
         </Card1>
-        <Card2>Gift Ideas</Card2>
-        <Card3>Arts, Prints, Photographs</Card3>
-        <Card4>Textiles</Card4>
+        <Card2 value="Card1">Gift Ideas</Card2>
+        <Card3 value="Card1">Arts, Prints, Photographs</Card3>
+        <Card4 value="Card1">Textiles</Card4>
       </CardGroup>
     </Wrap>
   );
