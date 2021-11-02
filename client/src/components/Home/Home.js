@@ -5,7 +5,7 @@ import Section from "../Section/Section";
 function Home() {
   return (
     <Container>
-      <Section />
+      <Section bgImage="frames1.jpeg" />
     </Container>
   );
 }
