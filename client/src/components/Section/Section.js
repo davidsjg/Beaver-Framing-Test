@@ -68,6 +68,9 @@ const Wrap = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  transition: all 0.5s ease-in;
+  // transition-property: all;
+  // transition-duration: 2s;
 `;
 
 const ItemText = styled.div`

@@ -53,6 +53,8 @@ export default Home;
 
 const Container = styled.div`
   height: 100vh;
-
-  transition: transform 0.2s;
+  // transition: all 0.5s ease-in;
+  // transition: transform 0.2s;
+  // transition-property: all;
+  // transition-duration: 1s;
 `;
