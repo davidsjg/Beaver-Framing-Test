@@ -78,19 +78,11 @@ const ItemText = styled.div`
   background: darkOrange;
   border-radius: 20px;
   font-size: small;
-
-  //   padding-top: 15px;
-  //   display: flex;
-  //   flex-direction: column;
-  //   align-items: center;
-  //   justify-content: center;
-
-  //   color: black;
 `;
 
 const CardGroup = styled.div`
   display: flex;
-  margin-bottom: 30px;
+  margin-bottom: 120px;
   cursor: pointer;
 `;
 
@@ -104,7 +96,6 @@ const Card1 = styled.div`
   align-items: center;
   border-radius: 20px;
   opacity: 0.85;
-  // margin: 0 10px;
 `;
 
 const Card2 = styled(Card1)``;

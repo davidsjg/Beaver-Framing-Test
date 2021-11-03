@@ -40,7 +40,6 @@ function Home() {
 
   return (
     <>
-      <button onClick={handleClick}>click me</button>
       <CardContext.Provider value={cardState}>
         <Container>
           <Section bgImage={tempCard} updateBG={updateBG} />
