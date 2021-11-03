@@ -3,10 +3,14 @@ import styled from "styled-components";
 import CardContext from "../../api/CardContext";
 
 function Section({ bgImage, updateBG }) {
-  const { card1, card2, card3, card4 } = useContext(CardContext);
-  const [tempCard, setTempCard] = useState(true);
-
-  let temp1 = useRef(Card1);
+  const [cardState, setCardState] = useState({
+    card1: false,
+    card2: false,
+    card3: false,
+    card4: false,
+  });
+  const [tempCard, setTempCard] = useState("frames.jpeg");
+  let tempImg = "frames.jpeg";
 
   function handleOver(e) {
     console.log(e.target.dataset.info);
@@ -16,40 +20,62 @@ function Section({ bgImage, updateBG }) {
     updateBG("Card5");
   }
 
+  let Card1 = "Card1";
+  let Card2 = "Card2";
+  let Card3 = "Card3";
+  let Card4 = "Card4";
+  let Card5 = "Card5";
+
+  function updateBG(card) {
+    console.log(card);
+    if (card === Card1) {
+      setTempCard("frames1.jpeg");
+    } else if (card === Card2) {
+      setTempCard("frames2.jpeg");
+    } else if (card === Card3) {
+      setTempCard("frames3.jpeg");
+    } else if (card === Card4) {
+      setTempCard("frames4.jpeg");
+    } else if (card === Card5) {
+      setTempCard("frames.jpeg");
+    }
+    setCardState(tempCard);
+  }
+
   return (
-    <Wrap bgImage={bgImage}>
+    <Wrap bgImage={tempCard}>
       <ItemText>
         <h1>You can Beaver just about anthing.</h1>
       </ItemText>
       <CardGroup>
-        <Card1
+        <CardOne
           data-info="Card1"
           onMouseEnter={handleOver}
           onMouseLeave={handleExit}
         >
           Custom Frame
-        </Card1>
-        <Card2
+        </CardOne>
+        <CardTwo
           data-info="Card2"
           onMouseEnter={handleOver}
           onMouseLeave={handleExit}
         >
           Gift Ideas
-        </Card2>
-        <Card3
+        </CardTwo>
+        <CardThree
           data-info="Card3"
           onMouseEnter={handleOver}
           onMouseLeave={handleExit}
         >
           Arts, Prints, Photographs
-        </Card3>
-        <Card4
+        </CardThree>
+        <CardFour
           data-info="Card4"
           onMouseEnter={handleOver}
           onMouseLeave={handleExit}
         >
           Textiles
-        </Card4>
+        </CardFour>
       </CardGroup>
     </Wrap>
   );
@@ -89,7 +115,7 @@ const CardGroup = styled.div`
   cursor: pointer;
 `;
 
-const Card1 = styled.div`
+const CardOne = styled.div`
   background-color: rgba(23, 26, 32, 0.8);
   height: 40px;
   width: 128px;
@@ -101,6 +127,6 @@ const Card1 = styled.div`
   opacity: 0.85;
 `;
 
-const Card2 = styled(Card1)``;
-const Card3 = styled(Card1)``;
-const Card4 = styled(Card1)``;
+const CardTwo = styled(CardOne)``;
+const CardThree = styled(CardOne)``;
+const CardFour = styled(CardOne)``;
