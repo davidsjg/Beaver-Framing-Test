@@ -11,3 +11,42 @@ body {
 .slick-next:before {
   color: black !important;
 }
+
+.mainContain {
+  overflow-x: hidden;
+  height: 100vh;
+}
+.mainContain::before {
+}
+
+.wrapImg img {
+  border: 4px solid transparent;
+  border-radius: 4px;
+
+  box-shadow: rgb(0 0 0 / 69%) 0px 26px 30px -10px,
+    rgb(0 0 0 / 73%) 0px 16px 10px -10px;
+}
+
+.slick-list {
+  overflow: visible;
+}
+
+.slick-slide img {
+  /* display: flex !important; */
+}
+
+.sliderMain {
+}
+
+/* .slick-track {
+  min-height: 80vh !important;
+} */
+
+.centerFit {
+  height: 100vh;
+  margin: 5px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: auto;
+}

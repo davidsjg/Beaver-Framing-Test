@@ -6,20 +6,21 @@ import ImgSlider from "../ImgSlider/ImgSlider";
 
 function Home() {
   return (
-    <>
-      <Container>
-        <ImgSlider />
-      </Container>
-    </>
+    <div className="mainContain">
+      <ImgSlider />
+    </div>
   );
+
+  // return <div className="containerMain">Home</div>;
 }
 
 export default Home;
 
 const Container = styled.main`
-  min-height: 100vh;
+  min-height: calc(100vh - 70px) !important;
   padding: 0 calc(3.5vw + 5px);
-  position: relative;
+
+  background: no-repeat center / 80%;
   overflow-x: hidden;
 
   &:before {

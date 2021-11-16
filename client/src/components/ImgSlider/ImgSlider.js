@@ -6,29 +6,31 @@ import styled from "styled-components";
 
 function ImgSlider() {
   let settings = {
-    dots: true,
+    // dots: true,
     infinite: true,
-    speed: 500,
+    autoplaySpeed: 3000,
     slidesToShow: 1,
     SlidesToScroll: 1,
     autoplay: true,
+    fade: true,
+    useTransform: true,
   };
 
   return (
-    <Carousel {...settings}>
-      <Wrap>
-        <img src="/images/frames.jpeg" />
-      </Wrap>
-      <Wrap>
-        <img src="/images/frames1.jpeg" />
-      </Wrap>
-      <Wrap>
-        <img src="/images/frames2.jpeg" />
-      </Wrap>
-      <Wrap>
-        <img src="/images/frames4.jpeg" />
-      </Wrap>
-    </Carousel>
+    <Slider {...settings}>
+      <div className="wrapImg">
+        <img className="centerFit" src="/images/frames.jpeg" />
+      </div>
+      <div className="wrapImg">
+        <img className="centerFit" src="/images/frames1.jpeg" />
+      </div>
+      <div className="wrapImg">
+        <img className="centerFit" src="/images/frames2.jpeg" />
+      </div>
+      <div className="wrapImg">
+        <img className="centerFit" src="/images/frames4.jpeg" />
+      </div>
+    </Slider>
   );
 }
 
@@ -60,7 +62,7 @@ const Carousel = styled(Slider)`
 const Wrap = styled.div`
   cursor: pointer;
   img {
-    border: 2px solid transparent;
+    border: 4px solid transparent;
     border-radius: 4px;
     width: 100%;
     height: 100%;
