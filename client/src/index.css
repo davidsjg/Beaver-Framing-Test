@@ -44,8 +44,9 @@ body {
 
 .centerFit {
   height: 100vh;
+
   margin: 5px;
-  background-size: cover;
+
   background-position: center;
   background-repeat: no-repeat;
   margin: auto;
