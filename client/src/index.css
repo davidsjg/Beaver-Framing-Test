@@ -8,6 +8,6 @@ body {
   width: 100%;
 }
 
-.slick-prev:before {
-  color: black;
+.slick-next:before {
+  color: black !important;
 }

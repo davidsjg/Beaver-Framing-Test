@@ -60,7 +60,7 @@ const Carousel = styled(Slider)`
 const Wrap = styled.div`
   cursor: pointer;
   img {
-    border: 4px solid transparent;
+    border: 2px solid transparent;
     border-radius: 4px;
     width: 100%;
     height: 100%;
